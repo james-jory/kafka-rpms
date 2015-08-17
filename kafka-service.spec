@@ -77,7 +77,7 @@ design page for more details.
 %{__mkdir_p} %{buildroot}/var/run/kafka
 
 %{__mv} init.d/kafka-server %{buildroot}/etc/init.d
-%{__mv} kafka/server.properties kafka/log4j.properties %{buildroot}/etc/kafka
+%{__mv} kafka/server.properties kafka/log4j.properties kafka/zookeeper.properties %{buildroot}/etc/kafka
 %{__mv} sysconfig/kafka %{buildroot}/etc/sysconfig/kafka
 
 %clean
