@@ -1,12 +1,12 @@
 %define kafka_name kafka
 %define kafka_branch 0.8
-%define kafka_ver 0.8.1.1
-%define kafka_version 0.8.1.1
+%define kafka_ver 0.8.2.1
+%define kafka_version 0.8.2.1
 %define kafka_home /usr/lib/kafka/default
 %define kafka_user kafka
 %define kafka_group kafka
 
-%define kafka_version 0.8.1.1
+%define kafka_version 0.8.2.1
 
 Summary: A Daemon Package of Apache Kafka
 Name: kafka-service
@@ -15,7 +15,7 @@ Release: 4
 License: Apache License v2.0
 Group: Applications/Databases
 URL: http://incubator.apache.org/kafka/
-Source0: kafka-service-0.8.1.1.tgz
+Source0: kafka-service-0.8.2.1.tgz
 BuildRoot: %{_tmppath}/%{name}-%{kafka_version}-%{release}-root
 Requires: jdk, kafka
 Requires(post): chkconfig initscripts
