@@ -12,7 +12,7 @@ Feature
 * Manage the serice packages separately from the main sources of Kafka.
 * Make "kafka" user and "kafka" group to start processes.
 * Use the shell script function provided by the Kafka project to manage processes in the init script.
-* Kafka 0.8.1.1 is used in the following procedure.
+* Kafka 0.8.2.1 is used in the following procedure.
 
 ==========================
 Requriement
@@ -45,7 +45,7 @@ command example::
  $ cd <your working directory>
  $ git clone https://github.com/nttdata-oss/kafka-rpms.git
  $ cd kafka-rpms
- $ git checkout -b v0.8.1.1 refs/tags/0.8.1.1
+ $ git checkout -b v0.8.2.1 refs/tags/0.8.2.1
 
 ------------------------
 Download kafka binaries
@@ -55,7 +55,7 @@ The download URL is found at Apache Kafka official web site(http://kafka.apache.
 
 command example::
 
- $ wget http://<url of the mirror site>/kafka_2.10-0.8.1.1.tgz
+ $ wget http://<url of the mirror site>/kafka_2.10-0.8.2.1.tgz
 
 If you don't have ~/rpmbuild directory,
 you need to make directories.
@@ -68,7 +68,7 @@ Copy tgz file and patch to the rpmbuild directory.
 
 command example::
 
- $ cp kafka_2.10-0.8.1.1.tgz ~/rpmbuild/SOURCES
+ $ cp kafka_2.10-0.8.2.1.tgz ~/rpmbuild/SOURCES
  $ cp kafka-rpm/patch/logs_default_change.patch ~/rpmbuild/SOURCES
 
 ------------------
@@ -91,7 +91,7 @@ command example::
  $ rpmbuild -ba ~/rpmbuild/SPECS/kafka.spec
 
 As a result of this command,
-you get ~/rpmbuild/RPMS/x86_64/kafka-0.8.1.1-3.x86_64.rpm.
+you get ~/rpmbuild/RPMS/x86_64/kafka-0.8.2.1-3.x86_64.rpm.
 
 ================================
 How to make Kafka service rpm
@@ -104,17 +104,17 @@ Copy scripts and config files to rpmbuild directory.
 
 command example::
 
- $ mkdir ~/rpmbuild/SOURCES/kafka-service-0.8.1.1
- $ cp -r kafka-rpm/init.d ~/rpmbuild/SOURCES/kafka-service-0.8.1.1
- $ cp -r kafka-rpm/kafka ~/rpmbuild/SOURCES/kafka-service-0.8.1.1
- $ cp -r kafka-rpm/sysconfig ~/rpmbuild/SOURCES/kafka-service-0.8.1.1
+ $ mkdir ~/rpmbuild/SOURCES/kafka-service-0.8.2.1
+ $ cp -r kafka-rpms/init.d ~/rpmbuild/SOURCES/kafka-service-0.8.2.1
+ $ cp -r kafka-rpms/kafka ~/rpmbuild/SOURCES/kafka-service-0.8.2.1
+ $ cp -r kafka-rpms/sysconfig ~/rpmbuild/SOURCES/kafka-service-0.8.2.1
 
 Make tar file.
 
 command example::
 
  $ cd ~/rpmbuild/SOURCES
- $ tar cvzf kafka-service-0.8.1.1.tgz kafka-service-0.8.1.1
+ $ tar cvzf kafka-service-0.8.1.1.tgz kafka-service-0.8.2.1
 
 ------------------
 Copy spec file
@@ -124,7 +124,7 @@ Copy spec file of kafka to the rpmbuild directory.
 command example::
 
  $ cd <your working directory>
- $ cp kafka-rpm/kafka-service.spec  ~/rpmbuild/SPECS
+ $ cp kafka-rpms/kafka-service.spec  ~/rpmbuild/SPECS
 
 -----------
 Build rpm
@@ -136,7 +136,7 @@ command example::
  $ rpmbuild -ba ~/rpmbuild/SPECS/kafka-service.spec
 
 As a result of this command,
-you get ~/rpmbuild/RPMS/x86_64/kafka-service-0.8.1.1-4.x86_64.rpm.
+you get ~/rpmbuild/RPMS/x86_64/kafka-service-0.8.2.1-4.x86_64.rpm.
 
 =========================
 ToDo
