@@ -64,7 +64,7 @@ B
 %define _kafka_noarch_libdir %{_noarch_libdir}/kafka
 
 %prep
-%setup -q -n kafka_2.10-0.8.1.1
+%setup -q -n kafka_2.10-0.8.2.1
 %patch0 -p1
 %build
 #./sbt update
