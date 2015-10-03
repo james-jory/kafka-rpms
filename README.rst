@@ -114,7 +114,7 @@ Make tar file.
 command example::
 
  $ cd ~/rpmbuild/SOURCES
- $ tar cvzf kafka-service-0.8.1.1.tgz kafka-service-0.8.2.1
+ $ tar cvzf kafka-service-0.8.2.1.tgz kafka-service-0.8.2.1
 
 ------------------
 Copy spec file
